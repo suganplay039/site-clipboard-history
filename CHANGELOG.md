@@ -3,6 +3,11 @@
 All notable changes to this project are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/), versioning follows [SemVer](https://semver.org/).
 
+## [Unreleased]
+
+### Fixed
+- Keyboard shortcut now matches on `e.code` instead of `e.key`, so macOS's Option-key character remapping no longer breaks `Alt+Shift+C` detection
+
 ## [0.1.0] - 2026-08-20
 
 ### Added
