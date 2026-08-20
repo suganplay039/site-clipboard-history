@@ -21,7 +21,7 @@
    * ------------------------------------------------------------- */
   const STORAGE_KEY = 'sch_history_v1';
   const SETTINGS_KEY = 'sch_settings_v1';
-  const SHORTCUT = { key: 'C', alt: true, shift: true, ctrl: false }; // Alt+Shift+C
+  const SHORTCUT = { code: 'KeyC', alt: true, shift: true, ctrl: false }; // Alt+Shift+C (uses e.code so Option's char remap on Mac doesn't break matching)
   const DEFAULT_SETTINGS = {
     retentionMode: 'count', // 'count' | 'time' | 'unlimited'
     maxCount: 30,
@@ -309,7 +309,7 @@
    * ------------------------------------------------------------- */
   document.addEventListener('keydown', (e) => {
     const matches =
-      e.key.toUpperCase() === SHORTCUT.key &&
+      e.code === SHORTCUT.code &&
       e.altKey === SHORTCUT.alt &&
       e.shiftKey === SHORTCUT.shift &&
       e.ctrlKey === SHORTCUT.ctrl;
